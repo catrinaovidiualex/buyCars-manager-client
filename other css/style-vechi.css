@@ -1,0 +1,75 @@
+body{
+    background-image: url("img/rentacar.jpeg");
+    background-size: cover;
+    width:100%;
+    height:90%;
+}
+
+.container{
+    display: grid;
+    flex-direction: column;
+    align-items: center;
+    grid-template-columns: repeat(auto-fit,minmax(200px,1fr)) ;
+    grid-template-rows: 200px 200px;
+    
+
+}
+
+.masina{
+    border:2px solid rgb(2, 12, 95);
+    width:40%;
+    height:90%;
+}
+
+.masina p{
+    margin-left:5px;
+    font-size: 15px;
+    color:blue;
+}
+
+.masina p{
+    font-size: 13px;
+    font-family: Arial, Helvetica, sans-serif;
+    
+}
+
+.marca{
+    font-weight: bold;
+}
+
+
+.disabled{
+
+   background-color: red;
+
+    box-shadow:coral;
+
+}
+
+h3, p{
+    font-size: 15px;
+    font-family: Arial, Helvetica, sans-serif;
+    color:blue;
+
+}
+
+h1{
+    font-size: 25px;
+    font-family: Arial, Helvetica, sans-serif;
+    color:rgb(3, 3, 83); 
+    text-align: center;
+    }
+
+footer{
+    font-size: 15px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    color:rgb(85, 87, 87); 
+    text-align: center;
+    }
+
+.btn{
+    background-color: rgb(200, 218, 252);
+    height:20px;
+    border-radius: 5px;;
+}
