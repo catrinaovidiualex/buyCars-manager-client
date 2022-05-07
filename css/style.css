@@ -17,8 +17,8 @@ body{
 }
 
 .masina{
-    border:2px solid rgb(2, 12, 95);
-    width:50%;
+    border:2px solid rgb(107, 107, 107);
+    width:85px;
     border-radius: 10px;
 
 
@@ -27,7 +27,7 @@ body{
     align-items: center;
     justify-content: center;
     flex-direction: column;
-    background-color: black;
+    background-color: rgb(161, 160, 160);
 
     color: white;
 
