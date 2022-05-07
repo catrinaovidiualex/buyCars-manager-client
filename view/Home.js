@@ -90,7 +90,7 @@ addNewCar=async(e)=>{
 
 
 
-    location.reload();
+    location.reload(); /*reincarca pagina */
 
 
    }

@@ -5,17 +5,35 @@ class UpdateCar{
     constructor(id){
         this.api= new Api();
         this.id=id;
-        this.container=document.querySelector(".container");
+        this.container=document.querySelector(".containerModif");
 
-        this.createUpdateCarPage();
+        this.UpdateCarPage();
          
-        this.populateCarInputs();
-
         this.car={id:id};
+
+        this.updatedMarca=document.querySelector(".marcaMasina");
+        this.updatedAn=document.querySelector(".anMasina");
+        this.updatedCombustibil=document.querySelector(".combustibilMasina");
+        this.updatedPret=document.querySelector(".pretMasina");
 
     }
 
-    createUpdateCarPage= async()=>{
+    UpdateCarPage= async()=>{
+        let containerUpdate= await this.api.updateCar(car);
+
+        let car={
+            marca:this.updatedMarca.value,
+            an:this.updatedAn.value,
+            combustibil:this.updatedCombustibil.value,
+            pret:this.updatedPret.value
+
+        }
+
+        this.api.updateCar(car);
+
+        location.reload /*reincarca pagina */
+
+
         
     }
 

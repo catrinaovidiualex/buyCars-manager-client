@@ -44,7 +44,7 @@ export default class Data{
 
         if(response.status==202){
 
-            return "Est ok";
+            return "Este ok";
         }else{
 
             return "";
@@ -52,6 +52,18 @@ export default class Data{
 
 
 
+    }
+
+  
+    async updateCar(car){
+        const response = await this.api('/api/v1/cars/updateCars');
+        if(response.status==202){
+
+            return "Este ok";
+        }else{
+
+            return "Eroare la update car";
+        }
     }
 
 
