@@ -1,5 +1,6 @@
 
 import Api from "../Api.js";
+import UpdateCar from "./UpdateCar.js";
 
 
 export default class Home{
@@ -19,6 +20,8 @@ constructor(id){
     this.addNewCars =document.querySelector(".adaugare");
  
     this.addNewCars.addEventListener("click",this.addNewCar);
+    container.addEventListener("click",this.updateCar);
+    
 
 }
 
@@ -27,6 +30,8 @@ createCard=(obj)=>{
     let section=document.createElement('section');
 
     section.classList.add('masina');
+
+    section.classList.add(`id${obj.id}`)
 
     
     let p1=document.createElement("p");
@@ -94,6 +99,34 @@ addNewCar=async(e)=>{
 
 
    }
+
+updateCar=async(e)=>{
+    let obj=e.target;
+
+    if(obj.parentNode.classList.contains("masina")){
+        let parent=obj.parentNode;
+        let id=parent.classList[1];
+        id=id.substr(2);
+        id=+id;
+
+        let cars= await this.api.cars();
+
+
+        let car=cars.filter(e=>e.id==id)[0];
+
+
+       
+        new UpdateCar(car);
+
+
+    }
+    
+
+}  
+
+handleClick=(e)=>{
+    new UpdateCar();
+}
 
 
 
