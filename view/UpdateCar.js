@@ -26,10 +26,14 @@ export default class UpdateCar{
         this.updatedPret.value=this.car.pret;
 
         this.containerUpdateCar=document.querySelector(".updateCars");
-        this.containerUpdateCar.addEventListener("change",this.changeCar)
+        this.containerUpdateCar.addEventListener("change",this.changeCar);
 
         this.updateBtn=document.querySelector(".modifMasina");
-        this.updateBtn.addEventListener("click",updateCar);
+        this.updateBtn.addEventListener("click",this.updateCar);
+
+        this.cancelBtn=document.querySelector(".anuleazaModif");
+        this.cancelBtn.addEventListener("click",this.cancelUpdate);
+
         
 
 
@@ -94,7 +98,7 @@ export default class UpdateCar{
     
     <div class="buttonsUpdateCars">
         <button class="modifMasina">Modifica masina</button>
-        
+        <button class="stergeMasina">Sterge masina</button>
         <button class="anuleazaModif">Anuleaza</button>
        
     </div> 
@@ -103,6 +107,10 @@ export default class UpdateCar{
 </form>
         `
 
+    }
+
+    cancelUpdate(){
+        new Home();
     }
 
     
