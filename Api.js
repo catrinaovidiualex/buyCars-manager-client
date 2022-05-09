@@ -54,7 +54,6 @@ export default class Data{
 
     }
 
-  
     async updateCar(car){
         const response = await this.api('/api/v1/cars/updateCars','PUT',car);
         if(response.status==202){

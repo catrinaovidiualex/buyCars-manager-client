@@ -12,7 +12,7 @@ export default class UpdateCar{
        
         this.car=car;
          
-        // this.car=car;
+       
        
         this.updatedMarca=document.querySelector(".marcaMasina");
 
@@ -29,7 +29,7 @@ export default class UpdateCar{
         this.containerUpdateCar.addEventListener("change",this.changeCar);
 
         this.updateBtn=document.querySelector(".modifMasina");
-        this.updateBtn.addEventListener("click",this.updateCar);
+        this.updateBtn.addEventListener("click",this.salvareModifMasina);
 
         this.cancelBtn=document.querySelector(".anuleazaModif");
         this.cancelBtn.addEventListener("click",this.cancelUpdate);
@@ -42,7 +42,7 @@ export default class UpdateCar{
     }
   // verificam daca inputurile au fost modificate si le salvam valoarea dupa ce s-au modificat
     changeCar= async(e)=>{
-
+       let newCar=await this.api.get
 
         let obj=e.target;
 
@@ -59,6 +59,8 @@ export default class UpdateCar{
         if(obj.classList.contains("pretMasina")){
             this.car.pret=obj.value;
         }
+
+
 
         
     
@@ -107,6 +109,17 @@ export default class UpdateCar{
 </form>
         `
 
+    }
+
+
+    salvareModifMasina=async(e)=>{
+
+        e.preventDefault();
+       console.log("modificare masina");
+       await this.api.updateCar(this.car);
+       location.reload();
+         
+         
     }
 
     cancelUpdate(){
