@@ -65,6 +65,16 @@ export default class Data{
         }
     }
 
+    async deleteByCarID(id){
+        const response = await this.api(`/api/v1/cars/deleteCar/${id}`,'DELETE');
+        if(response.status==202){
+            return  "Masina a fost stearsa";
+        }else{
+            return"Masina nu s-a sters";
+            }
+
+    }
+
 
 
 }

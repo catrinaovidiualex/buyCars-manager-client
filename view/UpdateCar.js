@@ -34,6 +34,10 @@ export default class UpdateCar{
         this.cancelBtn=document.querySelector(".anuleazaModif");
         this.cancelBtn.addEventListener("click",this.cancelUpdate);
 
+
+        this.deleteBtn=document.querySelector(".stergeMasina");
+        this.deleteBtn.addEventListener("click",this.stergeMasina);
+
         
 
 
@@ -121,6 +125,17 @@ export default class UpdateCar{
          
          
     }
+
+    stergeMasina=async(e)=>{
+        e.preventDefault();
+     
+        //console.log(this.car.id); aceste este id-ul masinii ce trebuie stearsa
+        await this.api.deleteCar(this.car.id);
+       
+         new Home();
+    }
+
+
 
     cancelUpdate(){
         new Home();
