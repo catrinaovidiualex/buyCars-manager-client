@@ -21,6 +21,9 @@ constructor(id){
  
     this.addNewCars.addEventListener("click",this.addNewCar);
     container.addEventListener("click",this.updateCar);
+
+    this.cumparatBtn=document.querySelector(".cumparare");
+    this.cumparatBtn.addEventListener("click", this.cumparaMasina);
     
 
 }
@@ -126,6 +129,13 @@ updateCar=async(e)=>{
 
 handleClick=(e)=>{
     new UpdateCar();
+}
+
+cumparaMasina=(e)=>{
+   
+    
+    let masinaDeCumparat=prompt("Introduceti marca masinii pe care doriti sa o cumparati:")
+    
 }
 
 
