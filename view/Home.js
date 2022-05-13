@@ -16,6 +16,8 @@ constructor(id){
     this.newpret =document.querySelector("#addpret");
     this.populateTable();
 
+    this.containerMasina=document.querySelector(".masina");
+
     this.car={};
     this.addNewCars =document.querySelector(".adaugare");
  
@@ -131,10 +133,21 @@ handleClick=(e)=>{
     new UpdateCar();
 }
 
-cumparaMasina=(e)=>{
-   
+cumparaMasina=()=>{
+    let cars= await this.api.cars();
+    this.containerMasina=document.querySelector(".masina");
     
     let masinaDeCumparat=prompt("Introduceti marca masinii pe care doriti sa o cumparati:")
+    
+    
+    this.car.forEach((e)=>{
+    
+    
+    if(this.car.marca==masinaDeCumparat){
+        this.containerMasina.style.backgroundColor='red';
+    }
+
+    });
     
 }
 
